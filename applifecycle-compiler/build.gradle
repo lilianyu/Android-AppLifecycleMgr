@@ -1,4 +1,5 @@
 apply plugin: 'java-library'
+apply plugin: 'maven-publish'
 
 // JitPack Maven
 //apply plugin: 'com.github.dcendents.android-maven'
@@ -14,9 +15,30 @@ dependencies {
 
     implementation 'com.squareup:javapoet:1.12.1'
 
-    implementation project(':applifecycle-annotation')
+    api project(':applifecycle-annotation')
 //    implementation 'com.github.hufeiyang.Android-AppLifecycleMgr:applifecycle-annotation:1.0.2'
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.lilianyu'
+                artifactId = 'applifecycle-compiler'
+                version = '1.1.0'
+            }
+        }
+
+//        repositories {
+//            // 本地仓库位于USER_HOME/.m2/repository
+//            mavenLocal()
+////            repository(url: "~/.m2/repository/")
+//        }
+    }
 }
 
 sourceCompatibility = "1.8"
