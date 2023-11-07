@@ -1,20 +1,16 @@
 apply plugin: 'com.android.library'
 
 // JitPack Maven
-apply plugin: 'com.github.dcendents.android-maven'
-// Your Group
-group='com.github.hufeiyang'
+//apply plugin: 'com.github.dcendents.android-maven'
+//// Your Group
+//group='com.github.hufeiyang'
 
 android {
-    compileSdkVersion 26
-
-
+    compileSdkVersion 31
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 21
+        targetSdkVersion 31
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -37,7 +33,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-//    implementation project(':applifecycle-annotation')
-    api 'com.github.hufeiyang.Android-AppLifecycleMgr:applifecycle-annotation:1.0.2'
+    api project(':applifecycle-annotation')
+//    api 'com.github.hufeiyang.Android-AppLifecycleMgr:applifecycle-annotation:1.0.2'
 
 }

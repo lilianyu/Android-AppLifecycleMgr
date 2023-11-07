@@ -45,7 +45,12 @@ class ScanUtil {
                     if (list == null) {
                         list = new ArrayList<>()
                     }
-                    list.addAll(entryName.substring(entryName.lastIndexOf("/") + 1))
+
+                    println "entryName = ${entryName}"
+                    def entry = entryName.substring(entryName.lastIndexOf("/") + 1)
+                    if (entry && !entry.allWhitespace) {
+                        list.add(entry)
+                    }
                 }
             }
         }

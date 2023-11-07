@@ -1,1 +1,2 @@
-include ':app', ':applifecycle-annotation', ':applifecycle-api', ':applifecycle-compiler', ':module-1', ':applifecycle-plugin'
+include ':app'
+include ':applifecycle-annotation', ':applifecycle-api', ':applifecycle-compiler', ':module-1', ':applifecycle-plugin'

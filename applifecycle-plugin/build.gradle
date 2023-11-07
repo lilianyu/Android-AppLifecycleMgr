@@ -1,12 +1,14 @@
 apply plugin: 'java-library'
 apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+
 //发到本地maven时打开
 //apply plugin: 'maven'
 
 // JitPack Maven （发到本地maven时关闭）
-apply plugin: 'com.github.dcendents.android-maven'
-// Your Group
-group='com.github.hufeiyang'
+//apply plugin: 'com.github.dcendents.android-maven'
+//// Your Group
+//group='com.github.hufeiyang'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -14,14 +16,22 @@ dependencies {
     implementation gradleApi()
     implementation localGroovy()
 
-    implementation 'com.android.tools.build:transform-api:1.5.0'
-    implementation 'com.android.tools.build:gradle:3.6.4'
+//    implementation 'com.android.tools.build:transform-api:1.5.0'
+//    implementation 'com.android.tools.build:gradle:3.6.4'
 
+    implementation 'com.google.guava:guava:27.0.1-jre'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'commons-codec:commons-codec:1.16.0'
+//    implementation 'com.android.tools.build:transform-api:3.4.0'
+    implementation 'com.android.tools.build:gradle:7.4.2'
+
+    implementation group: 'org.ow2.asm', name: 'asm', version: '9.2'
+    implementation group: 'org.ow2.asm', name: 'asm-commons', version: '9.2'
 
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = "11"
+targetCompatibility = "11"
 
 //发到本地maven时打开
 //uploadArchives {
@@ -32,3 +42,24 @@ targetCompatibility = "1.7"
 //        repository(url: "file:///Users/hufeiyang/.m2/repository/")
 //    }
 //}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.heima.iou'
+                artifactId = 'hmlifecyclepluginlocal'
+                version = '1.1.0'
+            }
+        }
+
+        repositories {
+            // 本地仓库位于USER_HOME/.m2/repository
+            mavenLocal()
+//            repository(url: "~/.m2/repository/")
+        }
+    }
+}
