@@ -29,12 +29,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-//    implementation project(':applifecycle-annotation')
+    implementation project(':applifecycle-annotation')
 //    implementation project(':applifecycle-api')
 //    annotationProcessor project(':applifecycle-compiler')
 
-    implementation 'com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-api:1.1.0'
-    annotationProcessor 'com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-compiler:1.1.0'
+    implementation 'com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-api:1.1.1'
+    annotationProcessor 'com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-compiler:1.1.1'
 
     implementation project(':module-1')
 }
