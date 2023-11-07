@@ -1,9 +1,6 @@
 apply plugin: 'java-library'
+apply plugin: 'maven-publish'
 
-// JitPack Maven
-//apply plugin: 'com.github.dcendents.android-maven'
-// Your Group
-//group='com.github.hufeiyang'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -11,3 +8,24 @@ dependencies {
 
 sourceCompatibility = "11"
 targetCompatibility = "11"
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.lilianyu'
+                artifactId = 'applifecycle-annotation'
+                version = '1.1.1'
+            }
+        }
+
+//        repositories {
+//            // 本地仓库位于USER_HOME/.m2/repository
+//            mavenLocal()
+////            repository(url: "~/.m2/repository/")
+//        }
+    }
+}

@@ -1,7 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+    ext {
+        applifecyclePluginVersion = 'feature~upgrade_AGP_to_7.4.2-SNAPSHOT'
+    }
     repositories {
         google()
         jcenter()
@@ -20,11 +22,9 @@ buildscript {
         //加载插件applifecycle（本地）
 //        classpath 'com.heima.iou:hmlifecyclepluginlocal:1.0.1'
 
-//        classpath 'com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-plugin:1.1.0'
+        classpath "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-plugin:$applifecyclePluginVersion"
 //        classpath 'com.github.lilianyu:applifecycle-plugin:1.1.0'
 //        classpath 'com.heima.iou:hmlifecyclepluginlocal:1.1.0'
-
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
