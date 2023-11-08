@@ -29,8 +29,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api project(':applifecycle-annotation')
-//    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.1"
+//    api project(':applifecycle-annotation')
+    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:$rootProject.ext.applifecyclePluginVersion"
 }
 
 afterEvaluate {

@@ -10,8 +10,8 @@ dependencies {
 
     implementation 'com.squareup:javapoet:1.12.1'
 
-    api project(':applifecycle-annotation')
-//    implementation "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.1"
+//    api project(':applifecycle-annotation')
+    implementation "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:$rootProject.ext.applifecyclePluginVersion"
 
 }
 
