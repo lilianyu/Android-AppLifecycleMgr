@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'maven-publish'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 31
@@ -30,26 +30,26 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     api project(':applifecycle-annotation')
-//    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.0"
+//    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.1"
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//
-//                // You can then customize attributes of the publication as shown below.
-//                groupId = 'com.github.lilianyu'
-//                artifactId = 'applifecycle-api'
-//                version = '1.2.1'
-//            }
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.lilianyu'
+                artifactId = 'applifecycle-api'
+                version = '1.2.2'
+            }
+        }
+
+//        repositories {
+//            // 本地仓库位于USER_HOME/.m2/repository
+//            mavenLocal()
+////            repository(url: "~/.m2/repository/")
 //        }
-//
-////        repositories {
-////            // 本地仓库位于USER_HOME/.m2/repository
-////            mavenLocal()
-//////            repository(url: "~/.m2/repository/")
-////        }
-//    }
-//}
+    }
+}
