@@ -25,15 +25,6 @@ dependencies {
 sourceCompatibility = "11"
 targetCompatibility = "11"
 
-//发到本地maven时打开
-//uploadArchives {
-//    repositories.mavenDeployer {
-//        pom.version = '1.0.1'
-//        pom.artifactId = 'hmlifecyclepluginlocal'
-//        pom.groupId = 'com.heima.iou'
-//        repository(url: "file:///Users/hufeiyang/.m2/repository/")
-//    }
-//}
 
 afterEvaluate {
     publishing {
@@ -44,7 +35,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.lilianyu'
                 artifactId = 'applifecycle-plugin'
-                version = '1.1.1'
+                version = '1.2.2'
             }
         }
 

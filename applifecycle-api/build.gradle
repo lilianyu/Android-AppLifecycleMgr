@@ -1,12 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
-
-// JitPack Maven
-//apply plugin: 'com.github.dcendents.android-maven'
-//// Your Group
-//group='com.github.hufeiyang'
-
 android {
     compileSdkVersion 31
 
@@ -35,8 +29,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-//    api project(':applifecycle-annotation')
-    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:$rootProject.ext.applifecyclePluginVersion"
+    api project(':applifecycle-annotation')
+//    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.1"
 }
 
 afterEvaluate {
@@ -48,7 +42,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.lilianyu'
                 artifactId = 'applifecycle-api'
-                version = '1.1.1'
+                version = '1.2.2'
             }
         }
 
