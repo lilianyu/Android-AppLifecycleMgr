@@ -2,7 +2,7 @@
 
 buildscript {
     ext {
-        applifecyclePluginVersion = 'feature~upgrade_AGP_to_7.4.2-SNAPSHOT'
+        applifecyclePluginVersion = 'v1.2.0'
     }
     repositories {
         google()
@@ -22,7 +22,7 @@ buildscript {
         //加载插件applifecycle（本地）
 //        classpath 'com.heima.iou:hmlifecyclepluginlocal:1.0.1'
 
-        classpath "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-plugin:$applifecyclePluginVersion"
+//        classpath "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-plugin:$applifecyclePluginVersion"
 //        classpath 'com.github.lilianyu:applifecycle-plugin:1.1.0'
 //        classpath 'com.heima.iou:hmlifecyclepluginlocal:1.1.0'
     }
