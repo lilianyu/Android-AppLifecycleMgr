@@ -2,12 +2,12 @@
 
 buildscript {
     ext {
-        applifecyclePluginVersion = 'v1.2.2'
+        applifecyclePluginVersion = '1.2.3'
     }
     repositories {
         google()
         jcenter()
-        mavenLocal()
+//        mavenLocal()
 
         //自定义插件maven地址(本地maven)
 //        maven { url 'file:///Users/hufeiyang/.m2/repository/' }
@@ -22,7 +22,10 @@ buildscript {
         //加载插件applifecycle（本地）
 //        classpath 'com.heima.iou:hmlifecyclepluginlocal:1.0.1'
 
-        classpath "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-plugin:$applifecyclePluginVersion"
+
+//        classpath "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-plugin:$applifecyclePluginVersion"
+
+//        classpath "com.github.lilianyu:applifecycle-plugin:$applifecyclePluginVersion"
 //        classpath 'com.github.lilianyu:applifecycle-plugin:1.1.0'
 //        classpath 'com.heima.iou:hmlifecyclepluginlocal:1.1.0'
     }
@@ -32,7 +35,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        mavenLocal()
+//        mavenLocal()
 
         maven { url 'https://jitpack.io' }
     }
@@ -41,3 +44,4 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

@@ -1,13 +1,18 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+//
+////引入插件applifecycle
+//apply plugin: 'com.hm.plugin.lifecycle'
 
-//引入插件applifecycle
-apply plugin: 'com.hm.plugin.lifecycle'
+plugins {
+    id 'com.android.application'
+    id 'com.hm.plugin.lifecycle'
+}
 
 android {
     compileSdkVersion 31
     defaultConfig {
         applicationId "com.hm.iou.lifecycle.demo"
-        minSdkVersion 31
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -19,12 +24,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        //If you want to continue even if errors found use following line
+//        abortOnError false
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -33,8 +49,19 @@ dependencies {
 //    implementation project(':applifecycle-api')
 //    annotationProcessor project(':applifecycle-compiler')
 
-    implementation "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-api:$rootProject.ext.applifecyclePluginVersion"
-    annotationProcessor "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-compiler:$rootProject.ext.applifecyclePluginVersion"
+//    implementation "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-api:$rootProject.ext.applifecyclePluginVersion"
+    implementation "com.github.lilianyu:applifecycle-api:$rootProject.ext.applifecyclePluginVersion"
+//    annotationProcessor "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-compiler:$rootProject.ext.applifecyclePluginVersion"
+    annotationProcessor "com.github.lilianyu:applifecycle-compiler:$rootProject.ext.applifecyclePluginVersion"
 
-    implementation project(':module-1')
+//    implementation project(':module-1')
 }
+
+//tasks.withType(JavaCompile) {
+//    configure(options) {
+//        options.compilerArgs.add("-XDignore.symbol.file=true")
+//        options.fork = true
+//        options.forkOptions.executable = 'javac'
+//        options.encoding = 'utf-8'
+//    }
+//}
