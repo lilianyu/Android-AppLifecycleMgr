@@ -30,7 +30,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     api project(':applifecycle-annotation')
-//    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.1"
+//    api "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:$rootProject.ext.applifecyclePluginVersion"
 }
 
 afterEvaluate {
@@ -42,7 +42,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.lilianyu'
                 artifactId = 'applifecycle-api'
-                version = '1.2.2'
+                version = '1.2.3'
             }
         }
 

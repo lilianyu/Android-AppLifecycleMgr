@@ -1,12 +1,12 @@
 package com.hm.iou.lifecycle.plugin
 
-import jdk.internal.org.objectweb.asm.ClassReader
-import jdk.internal.org.objectweb.asm.ClassVisitor
-import jdk.internal.org.objectweb.asm.ClassWriter
-import jdk.internal.org.objectweb.asm.MethodVisitor
-import jdk.internal.org.objectweb.asm.Opcodes
-import jdk.internal.org.objectweb.asm.commons.AdviceAdapter
 import org.apache.commons.io.IOUtils
+import org.objectweb.asm.ClassReader
+import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.ClassWriter
+import org.objectweb.asm.MethodVisitor
+import org.objectweb.asm.Opcodes
+import org.objectweb.asm.commons.AdviceAdapter
 
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
@@ -78,7 +78,7 @@ class AppLifecycleCodeInjector {
         private ClassVisitor mClassVisitor
 
         AppLifecycleClassVisitor(ClassVisitor classVisitor) {
-            super(Opcodes.ASM5, classVisitor)
+            super(Opcodes.ASM9, classVisitor)
             mClassVisitor = classVisitor
         }
 
@@ -99,7 +99,7 @@ class AppLifecycleCodeInjector {
     class LoadAppLifecycleMethodAdapter extends AdviceAdapter {
 
         LoadAppLifecycleMethodAdapter(MethodVisitor mv, int access, String name, String desc) {
-            super(Opcodes.ASM5, mv, access, name, desc)
+            super(Opcodes.ASM9, mv, access, name, desc)
         }
 
         @Override

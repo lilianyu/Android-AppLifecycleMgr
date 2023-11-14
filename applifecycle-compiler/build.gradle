@@ -5,13 +5,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //注意依赖这里需要分别implementation、annotationProcessor
-    implementation 'com.google.auto.service:auto-service:1.0-rc6'
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    implementation 'com.google.auto.service:auto-service:1.1.1'
+    annotationProcessor 'com.google.auto.service:auto-service:1.1.1'
 
     implementation 'com.squareup:javapoet:1.12.1'
 
     api project(':applifecycle-annotation')
-//    implementation "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:v1.2.1"
+//    implementation "com.github.lilianyu.Android-AppLifecycleMgr:applifecycle-annotation:$rootProject.ext.applifecyclePluginVersion"
 
 }
 
@@ -24,7 +24,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.lilianyu'
                 artifactId = 'applifecycle-compiler'
-                version = '1.2.2'
+                version = '1.2.3'
             }
         }
 
